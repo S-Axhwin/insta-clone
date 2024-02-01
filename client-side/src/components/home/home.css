@@ -1,0 +1,23 @@
+.container:last-child{
+    margin-bottom: 50rem;
+}
+
+
+.nothing{
+    margin-bottom: 5rem;
+}
+
+.inp-container{
+    position: absolute;
+    z-index: 3;
+    top: 2rem;
+    left: 50%;
+}
+
+.hidden{
+    display: none;
+}
+
+.show{
+    display: flex;
+}

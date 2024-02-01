@@ -1,0 +1,67 @@
+.feed{
+    margin: auto;
+    margin-top: 2rem;
+    width: 90vw;
+    background-color: #181818;
+    z-index: 3;
+}
+
+.post{
+    background-color: rgb(41, 41, 41);
+}
+
+.holder{
+    background-color: rgb(28, 28, 28);
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    color: white;
+    border-bottom: 3px solid rgb(6, 6, 6);
+    height: fit-content;
+}
+svg{
+    transition: ease all 0.3s;
+}
+
+.id-holder{
+    display: flex;
+
+}
+.id{
+    margin: auto 1rem;
+
+}
+
+.reactions{
+    background-color: #202020;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+}
+
+.reaction{
+    margin: 1rem ;
+    display: flex;
+    gap: 1rem;
+}
+
+.reaction:hover{
+    cursor: pointer;
+}
+
+@media screen {
+    
+}
+
+.id::hover{
+    font-size: small;
+    color: black;
+}
