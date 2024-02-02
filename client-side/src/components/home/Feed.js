@@ -34,6 +34,7 @@ const Feed = ({fullData,  dispatch, refer}) => {
         </div>
       </div>
       <div className='post'>
+
         <img className={`img ${fullData.post ? '': 'waiting'}`} src={fullData.post} id='image'  alt=''/>
       </div>
       <div className='reactions'>
