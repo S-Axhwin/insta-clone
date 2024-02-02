@@ -47,6 +47,12 @@ svg{
     height: 100%;
 }
 
+.waiting{
+    height: 400px;
+    width: 400px;
+}
+
+
 .reaction{
     margin: 1rem ;
     display: flex;

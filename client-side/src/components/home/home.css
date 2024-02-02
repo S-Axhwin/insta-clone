@@ -10,8 +10,9 @@
 .inp-container{
     position: absolute;
     z-index: 3;
-    top: 2rem;
-    left: 50%;
+    top: 4rem;
+    display: flex;
+    justify-content: center;
 }
 
 .hidden{

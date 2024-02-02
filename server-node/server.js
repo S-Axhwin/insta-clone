@@ -14,7 +14,7 @@ app.get('/api' ,(req, res)=>{
           id: 1,
           post: 'https://slp-statics.astockcdn.net/static_assets/staging/24winter/home/curated-collections/card-2.jpg?width=580',
           saved: false,
-          liked: false
+          liked: false,
         },
         {
           user: 'Ashwin',
@@ -33,6 +33,13 @@ app.get('/api' ,(req, res)=>{
         {
           user: 'Monisha',
           id: 4,
+          post: 'http://via.placeholder.com/640x360',
+          saved: false,
+          liked: false
+        },
+        {
+          user: 'Monisha',
+          id: 5,
           post: 'https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630',
           saved: false,
           liked: false

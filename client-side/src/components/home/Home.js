@@ -12,13 +12,14 @@ export const ACTIONS = {
 const Home = ({search, setSearch}) => {
   const [toBeSearched, settoBeSearched] = useState("")
   const [state, dispatch] = useReducer(reduce, [])
+
+  const fetchApi = async ()=>{
+    const raw = await fetch('http://192.168.140.238:5001/api');
+    const data = await raw.json()
+    dispatch({type: 'fetch', payload: {data: data}})
+  }
   useEffect(()=>{
-    fetch('http://192.168.140.238:5001/api')
-    .then(res => res.json())
-    .then(data =>
-       {
-        dispatch({type: 'fetch', payload: {data: data}})
-      })
+    fetchApi();
   }, [])
 
   function reduce(state, action){
@@ -41,6 +42,8 @@ const Home = ({search, setSearch}) => {
         }))
       case "fetch":
         return action.payload.data
+      default:
+        return state
     }
 
   }
@@ -55,11 +58,11 @@ const Home = ({search, setSearch}) => {
     {state?state.filter((data)=>{
           let name = data.user.toLowerCase()
           let searchConst = (toBeSearched.toLowerCase());
-          return searchConst == '' ? data : name.includes(searchConst);
+          return searchConst === '' ? data : name.includes(searchConst);
     }).map(data=>{
       
       return <Feed fullData={data} key={data.id}  dispatch={dispatch}/>
-    }): "loading"}
+    }): <div style={{color: 'white', zIndex: 10}}>loading</div>}
     </div>
   )
 }

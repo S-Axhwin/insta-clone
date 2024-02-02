@@ -1,7 +1,7 @@
 import { Avatar, Icon, IconButton } from '@mui/material'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
-import React from 'react'
+import React, { useEffect } from 'react'
 import './feed.css'
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
@@ -9,11 +9,20 @@ import Button from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { ACTIONS } from './Home';
 const Feed = ({fullData,  dispatch, refer}) => {
-  function save(){
+  useEffect(()=>{
 
-  }
+    const image = document.getElementById('image')
+    image.addEventListener('error', (e)=>{
+      e.preventDefault();
+      image.src = "http://via.placeholder.com/640x360";
+      image.alt = "default"
+    })
+  })
+
   return (
     <>
+    {
+      !fullData?"loading":
     <div className='feed'>
       <div className='holder'>
         <div className='id-holder'>
@@ -25,7 +34,7 @@ const Feed = ({fullData,  dispatch, refer}) => {
         </div>
       </div>
       <div className='post'>
-        <img className='img' src={fullData.post} alt=''/>
+        <img className={`img ${fullData.post ? '': 'waiting'}`} src={fullData.post} id='image'  alt=''/>
       </div>
       <div className='reactions'>
         <div className='reaction' style={{alignItems: 'center'}}>
@@ -44,6 +53,7 @@ const Feed = ({fullData,  dispatch, refer}) => {
 
       </div>
     </div>
+    }
     </>
   )
 }
